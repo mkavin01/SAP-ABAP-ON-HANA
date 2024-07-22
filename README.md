@@ -1,6 +1,6 @@
 # SAP-ABAP-ON-HANA
 
-"You don't want to be great to start but want to start to be a great".
+"You don't have to be great to start but have to start to be a great".
 
 22nd July 2024
 
