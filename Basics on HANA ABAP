@@ -17,8 +17,7 @@ OLTP -> Online Transaction Processing -> Row store table      Eg, ecc or R3 syst
 OLAP -> Online Analytical   Processing -> column store table  Eg, BW (Business Warehouse)
      Operation supoorted -> read 
 
-HANA supports both HTAP ( Hybrid Transaction / Analytical processing )
-
+HANA supports both OLTP AND OLAP -> HTAP ( Hybrid Transaction / Analytical processing )
 
 
 Column oriented -> data will be stored in column unlike rows in traditional database so will be faster by giving the
