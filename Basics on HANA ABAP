@@ -7,6 +7,10 @@ In Memory       -> uses main memory so will be faster unlike traditional databas
                 -> in traditional database the ram will be limited hence there will be a constant swapping of data between 
                    appli. layer and db layer
                  ->bottle neck - slow I/O 
+but keeping data in main memory might be costlier in real time. So HANA comes up with "Dynamic tiering"
+
+Dynamic Tiering -> Most frequently used data will be stored in main memory "Hot Data"
+                -> Less frequently accessed data will stored in disk "Warm Data"
 
 Column oriented -> data will be stored in column unlike rows in traditional database so will be faster by giving the
                   exact column data that matches the user query
