@@ -1,3 +1,7 @@
 SAP - HANA -> System Applications and Products in Data Processing -> High performance ANalytic Appliance
 
 HANA is a high performance, column oriented, in memory and rdbms
+
+
+ecc  -> data to code -> fetches data from database layer to application layer then do validations and filters
+hana -> code to data -> fetches data from database layer to application layer post validations and filters in db layer
