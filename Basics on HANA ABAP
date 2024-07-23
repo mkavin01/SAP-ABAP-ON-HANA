@@ -1,7 +1,7 @@
 SAP - HANA -> System Applications and Products in Data Processing -> High performance ANalytic Appliance
 
 ecc  -> data to code -> fetches data from database layer to application layer then do validations and filters
-hana -> code to data -> fetches data from database layer to application layer post validations and filters in db layer
+hana -> code to data -> fetches data from database layer to application layer post validations and filters in db layer-> code push down
 
 HANA is a high performance, column oriented, in memory and relational database management system.
 
@@ -60,6 +60,15 @@ Dictionary compression
 compressed tables.
 Adavantages -> instead of using the actual table with strings the compressed table will be used with integer mapping that will
 reduce the memory significantly
+
+
+Parallel Processing
+
+-> each colum store of a table can be processed by different core, also even the same column store can be splitted and can be
+acccessed by different core. Hence more the core in sap hana landscape more the parallelisation
+
+
+
 
 
 
