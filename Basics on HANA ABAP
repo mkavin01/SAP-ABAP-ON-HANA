@@ -10,7 +10,14 @@ In Memory       -> uses main memory so will be faster unlike traditional databas
 but keeping data in main memory might be costlier in real time. So HANA comes up with "Dynamic tiering"
 
 Dynamic Tiering -> Most frequently used data will be stored in main memory "Hot Data"
-                -> Less frequently accessed data will stored in disk "Warm Data"
+                -> Less frequently accessed data will stored in disk "Warm Data" - persistent layer
+
+OLTP -> Online Transaction Processing -> Row store table eg, ecc
+OLAP -> Online Analytical   Processing -> column store table
+
+HANA supports both HTAP ( Hybrid Transaction / Analytical processing )
+
+
 
 Column oriented -> data will be stored in column unlike rows in traditional database so will be faster by giving the
                   exact column data that matches the user query
