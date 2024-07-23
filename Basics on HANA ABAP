@@ -12,8 +12,10 @@ but keeping data in main memory might be costlier in real time. So HANA comes up
 Dynamic Tiering -> Most frequently used data will be stored in main memory "Hot Data"
                 -> Less frequently accessed data will stored in disk "Warm Data" - persistent layer
 
-OLTP -> Online Transaction Processing -> Row store table eg, ecc
-OLAP -> Online Analytical   Processing -> column store table
+OLTP -> Online Transaction Processing -> Row store table      Eg, ecc or R3 system
+       Operation supported -> read wirte update modify
+OLAP -> Online Analytical   Processing -> column store table  Eg, BW (Business Warehouse)
+     Operation supoorted -> read 
 
 HANA supports both HTAP ( Hybrid Transaction / Analytical processing )
 
