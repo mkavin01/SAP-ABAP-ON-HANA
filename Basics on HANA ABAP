@@ -2,9 +2,10 @@ SAP - HANA -> System Applications and Products in Data Processing -> High perfor
 
 HANA is a high performance, column oriented, in memory and relational database management system.
 
-RDBMS     -> maintain relationship between data and store them in row and column.
-In Memory -> uses main memory so will be faster unlike traditional database
-
+RDBMS           -> maintain relationship between data and store them in row and column.
+In Memory       -> uses main memory so will be faster unlike traditional database
+Column oriented -> data will be stored in column unlike rows in traditional database so will be faster by giving the
+                  exact column data that matches the user query
 
 ecc  -> data to code -> fetches data from database layer to application layer then do validations and filters
 hana -> code to data -> fetches data from database layer to application layer post validations and filters in db layer
