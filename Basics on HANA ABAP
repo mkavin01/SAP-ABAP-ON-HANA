@@ -49,6 +49,20 @@ When to use :
 -> when no fast search or functions are not required
 -> when number of rows are lesser
 
+Data compression 
+1) Dictionary compression 
+2) Adavanced compression -> prefix encoding, run length coding, cluster coding, in direct encoding
+
+
+Dictionary compression
+
+-> Dictionary table column will be represented as unique colum table and later with integer key values. That will be used 
+compressed tables.
+Adavantages -> instead of using the actual table with strings the compressed table will be used with integer mapping that will
+reduce the memory significantly
+
+
+
 
 
 
