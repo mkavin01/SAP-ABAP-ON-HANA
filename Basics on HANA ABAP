@@ -1,6 +1,9 @@
 SAP - HANA -> System Applications and Products in Data Processing -> High performance ANalytic Appliance
 
-HANA is a high performance, column oriented, in memory and rdbms
+HANA is a high performance, column oriented, in memory and relational database management system.
+
+RDBMS     -> maintain relationship between data and store them in row and column.
+In Memory -> uses main memory so will be faster unlike traditional database
 
 
 ecc  -> data to code -> fetches data from database layer to application layer then do validations and filters
