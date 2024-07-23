@@ -1,1 +1,5 @@
-
+1) keep the result set small -> use having and where conditions whereever required
+2) Minimize the amount of data transferred  -> use select fields not select *
+3) Minimize the number of database accessing -> use joins and sub queries instead of nested select loop
+4) Minimize search overhead -> use indexes
+5) reduce the database load -> use table buffer if applicable and sort data in abap program
