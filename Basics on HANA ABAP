@@ -1,6 +1,10 @@
 SAP - HANA -> System Applications and Products in Data Processing -> High performance ANalytic Appliance
 
+ecc  -> data to code -> fetches data from database layer to application layer then do validations and filters
+hana -> code to data -> fetches data from database layer to application layer post validations and filters in db layer
+
 HANA is a high performance, column oriented, in memory and relational database management system.
+
  
 RDBMS           -> maintain relationship between data and store them in row and column.
 In Memory       -> uses main memory so will be faster unlike traditional database
@@ -23,7 +27,30 @@ HANA supports both OLTP AND OLAP -> HTAP ( Hybrid Transaction / Analytical proce
 Column oriented -> data will be stored in column unlike rows in traditional database so will be faster by giving the
                   exact column data that matches the user query
 
-ecc  -> data to code -> fetches data from database layer to application layer then do validations and filters
-hana -> code to data -> fetches data from database layer to application layer post validations and filters in db layer
+Advantages of column store table:
+1) Less memory usage
+2) Continuous sequencing of column values
+3) No indexes required
+4) Support Parallel processing
+5) Compressed Data
+
+
+When to use :
+
+1) Column store
+
+-> when table have higher number of column
+-> when u need fast search or functions like sum, aggragate,..
+-> when table is searched on few columns
+-> when compressions are required
+
+2) Column store 
+-> when application need to process one record at a time
+-> when no fast search or functions are not required
+-> when number of rows are lesser
+
+
+
+
 
 
