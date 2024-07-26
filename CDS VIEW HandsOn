@@ -1,0 +1,17 @@
+Simple CDS view:
+@AbapCatalog.sqlViewName: 'ZCDS_SQL_VIEW1'    " Annotation  " used to give sematic information for CDS " ZCDS_SQL_VIEW1 => View Name
+@EndUserText.label: 'Demo CDS View'          " Demo CDS View -> CDS view description
+define view  ZCDS_DDL_VIEW1 as               " ZCDS_DDL_VIEW1 CDS View Name -> Recommended that CDS view name and CDS DDL source name both should be same
+select 
+from mara
+{
+matnr as material,
+ersda as CREATED_date,
+created_at_time as time,
+ernam as created_by
+}
+
+
+SQL view can be opened in SAP GUI VIA SE11 
+but CDS view cannot be opened in SE11 it will redirect back to ADT
+CDS view name and DDL source name should be same
