@@ -1,6 +1,10 @@
-Program for CDS VIEWs with parameters
+//Program for CDS VIEWs with parameters
 
-here u can add additional charge so that if any material of mrp type 'ND' is found, the additional charge would be added
+//here u can add additional charge so that if any material of mrp type 'ND' is found, the additional charge would be added
+
+//WITH PARAMETER after DEFINE VIEW is the syntax for input parameter
+//Mention the data type for the input field or use the domain and that should match with the selection field where this is to be used
+//$parameters or : is the symbols represents input Parameters
 
 @AbapCatalog.sqlViewName: 'ZCDS_SQL_VIEW8'
 @EndUserText.label: 'CDS views with input parameter'
