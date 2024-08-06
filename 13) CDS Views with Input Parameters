@@ -24,7 +24,7 @@ on A.matnr = C.matnr
  B.dismm  as MRP_TYPE  ,
  C.stprs  as STANDARD_PRICE,
  case B.dismm
- when 'ND' then C.stprs + :ADDITIONAL_PRICE
+ when 'ND' then C.stprs  + $parameters.ADDITIONAL_PRICE //:ADDITIONAL_PRICE
  else C.stprs
  end as FINAL_PRICE
     
@@ -32,5 +32,3 @@ on A.matnr = C.matnr
 
 where A.ersda between '20121212' and :last_DATE
 and B.dismm != 'PD'
-
-
