@@ -4,3 +4,5 @@ create a query report in sqvl using table DD03L and ddldepdency
 choose table with join as source the  link table name with object name and add field under selection screen
 
 run your report you will get all the cds views that uses a field
+
+2) for migration from classic cds to cds entity we can use report 'RUTDDLSV2MIGRATION'
