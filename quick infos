@@ -1,0 +1,6 @@
+1) How to find the existing cds views based on a field?
+
+create a query report in sqvl using table DD03L and ddldepdency
+choose table with join as source the  link table name with object name and add field under selection screen
+
+run your report you will get all the cds views that uses a field
