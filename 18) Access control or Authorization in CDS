@@ -1,6 +1,7 @@
 //Create a CDS view and one auth object in su21 and map a role and it's user using pfcg
+// Create a authorizatuon using DCL Access control not on DDL Data definition
 
-CDS VIEW WITH AUTHORIZATION CHECK Annotation
+//CDS VIEW WITH AUTHORIZATION CHECK Annotation
 
 @AbapCatalog.sqlViewName: 'ZCDS_SQL_VIEW17'
 @AccessControl.authorizationCheck: #CHECK    //auth annotation
@@ -29,4 +30,7 @@ define role ZCDS_DCL_VIEW1 {
                     where
                         ( MATNR ) = aspect pfcg_auth( ZKA_CDS, MATNR= , ACTVT );
 
-   // ZKA_CDS is auth object                     
+   // ZKA_CDS is auth object 
+
+
+//create a report and try select the cds data and try to display
