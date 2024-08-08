@@ -13,10 +13,7 @@ CLASS zka_amdp_function DEFINITION PUBLIC.
   class-METHODS: meth_pub_static_amdp_function FOR TABLE FUNCTION zcds_table_function1.
 ENDCLASS.
 
-
-
 CLASS zka_amdp_function IMPLEMENTATION.
-
 METHOD  meth_pub_static_amdp_function BY DATABASE FUNCTION
                                       FOR HDB
                                       LANGUAGE SQLSCRIPT
