@@ -42,8 +42,8 @@ data(lo_sql) = new cl_sql_statement(  ).
 "Fill string variabLE with SQL statement
 
 CONCATENATE
-   `SELECT *`
-   `FROM EKPO`
+   `SELECT * `
+   `FROM EKPO `
    `WHERE MANDT = '` sy-mandt `' `  "explicit client handling
    `AND TXZ01 = '` 'Frame-500' `'`
    INTO LV_SQL.
@@ -89,7 +89,3 @@ if lo_Salv is BOUND.
 lo_Salv->display( ).
 endif.
 endif.
-
-
-
-                  
