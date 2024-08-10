@@ -1,0 +1,89 @@
+//Select-options is a feature of ABAP or Open SQL not for SQL 
+
+For converting slection option that will supported in DB follow the below steps
+1) Use class method  cl_shdb_setlab=>combine_setlabs() for converting select-o[tions sql where clause  ->abap layer
+2) Handling of dynamic where clauses within the AMDP method using function apply_filter ->db layer
+-----------------------------------------------------------------------------------------------------------------
+Approach 1
+class method having amdp procedure implementation
+CLASS zka_select_options_amdp DEFINITION PUBLIC.
+
+  PUBLIC SECTION.
+
+  INTERFACES : if_amdp_marker_hdb.
+
+  class-METHODS : meth_pub_stat_amdp IMPORTING value(ex_ebeln) type string
+                                     EXPORTING value(im_t_ekpo) type  WRF_AT_EKPO_TTY.
+
+ENDCLASS.
+
+
+
+CLASS zka_select_options_amdp IMPLEMENTATION.
+
+METHOD meth_pub_stat_amdp by DATABASE PROCEDURE
+                          FOR HDB
+                          LANGUAGE SQLSCRIPT
+                          OPTIONS READ-ONLY
+                          USING ekpo.
+
+   im_t_ekpo     = APPLY_FILTER (ekpo, :ex_ebeln );
+
+ENDMETHOD.
+ENDCLASS.
+---------------------------------------------------------------------------------
+driver program
+
+*&---------------------------------------------------------------------*
+*& Report zka_amdp_report3
+*&---------------------------------------------------------------------*
+*&
+*&---------------------------------------------------------------------*
+REPORT zka_amdp_report3.
+
+data:lv_ebeln type ebeln.
+
+SELECT-OPTIONS : s_ebeln for lv_Ebeln.
+
+
+START-OF-SELECTION.
+
+data(lv_where) = cl_shdb_seltab=>combine_seltabs(
+  EXPORTING
+    it_named_seltabs = VALUE #( (  name = 'EBELN' dref = ref #( s_ebeln[] ) ) ) ).
+
+
+    if lv_where is NOT INITIAL.
+
+  zka_select_options_amdp=>meth_pub_stat_amdp(
+    EXPORTING
+      ex_ebeln  = lv_where
+  IMPORTING
+      im_t_ekpo = data(lt_Data)
+  ).
+
+    if not lt_data is INITIAL.
+
+    try.
+
+    cl_salv_table=>factory(
+      EXPORTING
+       list_display   = if_salv_c_bool_sap=>false
+      IMPORTING
+        r_salv_table   = data(lo_salv)
+      CHANGING
+        t_table        = lt_data
+    ).
+    CATCH cx_salv_msg.
+
+    ENDTRY.
+
+    if lo_salv is BOUND.
+    lo_salv->display(  ).
+
+    endif.
+    endif.
+    endif.
+
+    ----------------------------------------------------------------------------------------------------------------------------
+
